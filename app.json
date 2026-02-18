@@ -1,0 +1,62 @@
+{
+  "expo": {
+    "name": "Huğlu Outdoor",
+    "slug": "huglu-outdoor-app",
+    "version": "1.0.0",
+    "orientation": "portrait",
+    "icon": "./assets/iconns.png",
+    "userInterfaceStyle": "automatic",
+    "splash": {
+      "image": "./assets/splash.png",
+      "resizeMode": "cover",
+      "backgroundColor": "#FFFFFF"
+    },
+    "assetBundlePatterns": [
+      "**/*"
+    ],
+    "ios": {
+      "supportsTablet": true,
+      "bundleIdentifier": "com.berqt.hugluoutdoor",
+      "infoPlist": {
+        "NSMicrophoneUsageDescription": "Bu uygulama sesli arama özelliği için mikrofon erişimine ihtiyaç duyar.",
+        "NSSpeechRecognitionUsageDescription": "Bu uygulama sesli arama özelliği için ses tanıma erişimine ihtiyaç duyar.",
+        "NSLocationWhenInUseUsageDescription": "Bu uygulama size en yakın mağazaları göstermek ve pusula özelliğini kullanmak için konum bilginize ihtiyaç duyar.",
+        "NSMotionUsageDescription": "Bu uygulama pusula özelliği için cihaz sensörlerine erişim gerektirir.",
+        "NFCReaderUsageDescription": "Bu uygulama temassız kredi kartı ödemesi için NFC okuma özelliğini kullanır."
+      },
+      "config": {
+        "googleMapsApiKey": "YOUR_GOOGLE_MAPS_API_KEY"
+      }
+    },
+    "android": {
+      "adaptiveIcon": {
+        "foregroundImage": "./assets/iconns.png",
+        "backgroundColor": "#11d421"
+      },
+      "package": "com.berqt.hugluoutdoor",
+      "permissions": [
+        "android.permission.RECORD_AUDIO",
+        "android.permission.ACCESS_FINE_LOCATION",
+        "android.permission.ACCESS_COARSE_LOCATION",
+        "android.permission.NFC",
+        "android.permission.READ_EXTERNAL_STORAGE",
+        "android.permission.READ_MEDIA_IMAGES",
+        "android.permission.CAMERA"
+      ],
+      "blockedPermissions": [
+        "android.permission.DETECT_SCREEN_CAPTURE"
+      ],
+      "config": {
+        "googleMaps": {
+          "apiKey": "YOUR_GOOGLE_MAPS_API_KEY"
+        }
+      }
+    },
+    "web": {
+      "favicon": "./assets/favicon.png"
+    },
+    "plugins": [
+      "expo-font"
+    ]
+  }
+}

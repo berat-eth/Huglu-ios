@@ -1,0 +1,33 @@
+<?xml version="1.0" encoding="utf-8"?>
+<network-security-config>
+    <!-- Production domain için güvenli bağlantı - HTTPS zorunlu -->
+    <domain-config cleartextTrafficPermitted="false">
+        <domain includeSubdomains="true">api.huglutekstil.com</domain>
+        <domain includeSubdomains="true">huglutekstil.com</domain>
+        <trust-anchors>
+            <!-- Sistem sertifikalarını kullan (production için güvenli) -->
+            <certificates src="system" />
+            <!-- Kullanıcı sertifikalarını da kabul et (development için) -->
+            <certificates src="user" />
+        </trust-anchors>
+    </domain-config>
+    
+    <!-- Development için cleartext traffic izni -->
+    <domain-config cleartextTrafficPermitted="true">
+        <domain includeSubdomains="true">localhost</domain>
+        <domain includeSubdomains="true">10.0.2.2</domain>
+        <domain includeSubdomains="true">127.0.0.1</domain>
+        <domain includeSubdomains="true">192.168.1.1</domain>
+        <domain includeSubdomains="true">192.168.0.1</domain>
+    </domain-config>
+    
+    <!-- Genel ayarlar - Production için HTTPS zorunlu -->
+    <base-config cleartextTrafficPermitted="false">
+        <trust-anchors>
+            <!-- Sistem sertifikalarını kullan -->
+            <certificates src="system" />
+            <!-- Kullanıcı sertifikalarını da kabul et (development için) -->
+            <certificates src="user" />
+        </trust-anchors>
+    </base-config>
+</network-security-config>
